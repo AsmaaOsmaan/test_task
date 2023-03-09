@@ -13,15 +13,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(body: Consumer<RandomColorVL>(
       builder: (BuildContext context, RandomColorVL vl, Widget? child) {
-        return Container(
-        height:  MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          color: vl.defaultColor,
-          child: GestureDetector(
-              onTap: () {
-                vl.getRandomColor();
-              },
-              child: Center(child:  Text('Hey There',style: getBoldStyle(),)),),
+        return GestureDetector(
+          onTap: () {
+            vl.getRandomColor();
+          },
+          child: Container(
+          height:  MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            color: vl.defaultColor,
+            child: Center(child:  Text('Hey There',style: getBoldStyle(),)),
+          ),
         );
       },
     ),);
